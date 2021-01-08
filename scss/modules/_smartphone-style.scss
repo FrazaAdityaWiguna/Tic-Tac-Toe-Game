@@ -1,0 +1,28 @@
+@use 'variable' as v;
+@media only screen and (max-width: 540px) {
+    .container {
+        margin: 25px;
+        padding: 25px;
+    }
+
+    .status {
+        font-size: v.$font-size;
+    }
+
+    .reset {
+        font-size: v.$font-size;
+    }
+
+    .game-cell {
+        height: 100px;
+        width: 100px;
+    }
+
+    .x::after {
+        font-size: 70px;
+    }
+
+    .o::after {
+        font-size: 105px;
+    }
+}

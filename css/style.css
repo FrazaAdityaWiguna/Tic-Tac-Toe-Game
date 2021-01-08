@@ -1,0 +1,158 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: #545454;
+  font-family: sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.container {
+  background: #ff8c00;
+  border-radius: 25px;
+  margin: 50px;
+  padding: 50px;
+}
+
+.title {
+  text-align: center;
+}
+
+.title span {
+  color: #fcfaf7;
+}
+
+.status-action {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 25px;
+  font-size: 25px;
+  height: 30px;
+}
+
+.status span {
+  color: #fcfaf7;
+}
+
+.reset {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.status {
+  font-size: 18px;
+}
+
+.reset:hover {
+  color: #fcfaf7;
+}
+
+.game-grid {
+  background: #ffbb00;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 15px;
+  margin-top: 50px;
+}
+
+.game-cell {
+  background: #ff8c00;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+}
+
+.x::after {
+  content: "✖";
+  font-size: 70px;
+}
+
+.o::after {
+  content: "○";
+  font-size: 120px;
+  color: #fcfaf7;
+}
+
+.won::after {
+  color: #ff0000;
+}
+
+.x::after,
+.o::after {
+  cursor: default;
+}
+
+.mark {
+  text-align: center;
+  margin-top: 20px;
+  color: #fcfaf7;
+}
+
+@media only screen and (max-width: 1024px) {
+  .game-grid {
+    margin-top: 25px;
+    grid-gap: 10px;
+  }
+
+  .game-cell {
+    height: 100px;
+    width: 100px;
+  }
+
+  .status {
+    font-size: 18px;
+  }
+
+  .reset {
+    font-size: 18px;
+  }
+
+  .x::after {
+    font-size: 80px;
+  }
+
+  .o::after {
+    font-size: 120px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .container {
+    margin: 25px;
+    padding: 25px;
+  }
+
+  .status {
+    font-size: 18px;
+  }
+
+  .reset {
+    font-size: 18px;
+  }
+
+  .game-cell {
+    height: 100px;
+    width: 100px;
+  }
+
+  .x::after {
+    font-size: 70px;
+  }
+
+  .o::after {
+    font-size: 105px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
