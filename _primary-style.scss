@@ -1,0 +1,99 @@
+@use 'mixin' as m;
+@use 'variable' as v;
+
+body {
+    background: #ff9900;
+    color: #545454;
+    font-family: sans-serif;
+    @include m.center-item(100%, 100vh);
+}
+
+.container {
+    background: #ff8c00;
+    border-radius: 25px;
+    box-shadow: 0 0 30px #000;
+    margin: 50px;
+    padding: 50px;
+}
+
+.title{
+    text-align: center;
+}
+
+.title span{
+    color: v.$primary-color;
+}
+
+.status-action{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 25px;
+    font-size: 25px;
+    height: 30px;
+}
+
+.status span {
+    color: v.$primary-color;
+}
+
+.reset{
+    cursor: pointer;    
+    font-size: v.$font-size;
+}
+
+.status {
+    font-size: v.$font-size;
+}
+
+.reset:hover {
+    color: v.$primary-color;
+}
+
+.game-grid{
+    background: #ffbb00;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 15px;
+    margin-top: 50px;
+}
+
+.game-cell{
+    background: #ff8c00;
+    cursor: pointer;
+    @include m.center-item(100px, 100px);
+}
+
+.x {
+    &::after {
+        content: '✖';
+        font-size: 70px;
+    }
+}
+
+.o {
+    &::after {
+        content: '○';
+        font-size: 120px;
+        color: v.$primary-color;
+    }
+}
+
+.won {
+    &::after{
+    color: #ff0000;
+    }
+}
+
+.x,
+.o {
+    &::after{
+        cursor: default;
+    }
+}
+
+.mark {
+    text-align: center;
+    margin-top: 20px;
+    color: v.$primary-color;
+}
